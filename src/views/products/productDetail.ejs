@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+        <!-- <link rel="stylesheet" href="/css/product2.css" /> -->
+        <title>PRODUCTO | WINEDERFUL</title>
+        <!-- <script src="/js/colapse.js"></script> -->
+         <script defer src="/js/cartFunctions.js"></script>
+        <script defer src="/js/prodDetail.js"></script>
+        <link rel="stylesheet" href="/css/productDetail.css">
+        <link rel="stylesheet" href="/css/collapseDetails.css">
+    </head>
+    <body class="body-index">
+        <%- include("../partials/header.ejs") %>
+        <main>
+            <section class="productCard">
+                <div class="container">
+                  <div class="info">
+                    <h3 class="name"><%=product.cellaruser.cellarName%></h3>
+                    <h1 class="slogan"><%= product.productName %></h1>
+                    <p class="price">$<%= product.price %></p>
+                    <p class="pDescription"><%= product.description %></p>
+                    <% if (user && user.dni) { %>
+                        <form action="/carrito" id="cart-form" class="buying" method="GET">
+                            <div class="quantity-box">
+                               
+                                <label for="quantity">Cantidad</label>
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    min="1"
+                                    placeholder="1"
+                                    value="1"
+                                />
+                            </div>
+                            <div class="buttons">
+                                <button type="submit" class="button create">
+                                    Agregar al carrito
+                                    <i class="fas fa-shopping-cart cart-button"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <% } else if (user && user.cuit && user.id == product.cellarUserId) { %>   
+                            
+                            <div class="buttons"> 
+                                <a class="button create" href="/productos/<%= product.id %>/editar">
+                                        Editar
+                                        <i class="fas fa-edit"></i></i>
+                                </a>
+                            </div>
+
+                        <% }else if(!user) { %>
+                             <div class="buttons">
+                                <a href="/usuarios/login" class="button create">
+                                    Agregar al carrito
+                                    <i class="fas fa-shopping-cart cart-button"></i>
+                                </a>
+                            </div>
+                      <%  } %>
+                  </div>
+                  
+                  <div class="sliderDetail">
+
+                    <ul class="sliderBox">
+                        <% for(let i = 0; i < product.image.length;i++) {%> 
+                      <li id="slide<%=i%>">
+                        <img src="/images/products/<%=product.image[i] %>"/>
+                      </li>
+                      <% } %> 
+
+                    </ul>
+                    
+                    <ul class="sliderMenu">
+                        <% for(let i = 0; i < product.image.length;i++) {%>
+                      <li>
+                        <a href="#slide<%=i%>"></a>
+                      </li>
+                      <% } %> 
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <details open>
+                <summary>ESPECIFICACIONES</summary>
+                <div class="faq__content">
+                    <div id="inside" class="description font-description">
+                        <div>
+                            <p>AÑADA:</p>
+                            <p class="data"><%= product.year %></p>
+                        </div>
+                        <div>
+                            <p>UVA:</p>
+                            <p class="data"><%= product.grape.name %></p>
+                        </div>
+                        <!-- <div>
+                            <p>PAIS:</p>
+                            <p class="data"></p>
+                        </div>
+                        <div>
+                            <p>ZONA:</p>
+                            <p class="data"></p>
+                        </div>
+                        <div>
+                            <p>BODEGA:</p>
+                            <p class="data"></p>
+                        </div> -->
+                        <div>
+                            <p>TEMPERATURA DE SERVICIO:</p>
+                            <p class="data"><%= product.temperature %></p>
+                        </div>
+                        <div>
+                            <p>GUARDA (EN AÑOS):</p>
+                            <p class="data"><%= product.aged %></p>
+                        </div>
+                    </div>
+                </div>
+                </details>           
+                <details open>
+                    <summary>RESEÑAS</summary>
+                </details>
+        </main>
+        <%- include("../partials/footer.ejs") %>
+    </body>
+</html>

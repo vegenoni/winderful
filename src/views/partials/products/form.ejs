@@ -1,0 +1,67 @@
+<section class="form form-newProduct">
+    <% let populateInputs = "" %> 
+    <form
+    <% if(url.includes("crear")) {%> 
+        action="/productos/crear"
+        <% }else if (url.includes("editar")) {%>
+              action="/productos/<%= product.id%>/editar?_method=PUT"
+            <% } %>  
+        method="POST"
+        enctype="multipart/form-data"
+        class="form"
+        id="newProd-form"
+    >
+    <% let prod = (product) ? product : "" %> 
+        <label for="productName">Nombre del vino</label>
+        <input type="text" name="productName" id="productName" value="<%=prod.productName ||" "%>" />
+        <label for="productPicture">Foto del producto</label>
+        <input type="file" name="image" id="productPicture" multiple  />
+        <label for="productPrice">Precio</label>
+        <input min="0" type="number" name="price" id="productPrice"value=<%=prod.price || ""%> />
+        <label for="productDescription">Descripción</label>
+        <textarea
+            name="description"
+            id="productDescription"
+            cols="30"
+            rows="10"
+            
+        ><%=prod.description || ""%></textarea>
+        <label for="productGrape">Varietal </label>
+        <!-- <input type="text" name="grape" id="productGrape" /> -->
+        <select name="grape" id="productGrape">
+            <% for(let i = 0; i < grapes.length;i++) { %>
+            <option value="<%=grapes[i].id %> "><%= grapes[i].name%></option>
+            <% } %>
+        </select>
+        <label for="productYear">Añada</label>
+        <select name="year" id="productYear">
+            <option selected >Selecciona un año</option>
+        </select>
+        <label for="productTemperature">Temperatura de servicio (Cº)</label>
+        <input type="number" name="temperature" id="productTemperature" value=<%=prod.temperature || ""%> />
+        <label for="productAged">Crianza</label>
+        <input type="number" name="aged" id="productAged" value=<%=prod.aged || ""%> />
+        <label for="productStock">Stock</label>
+        <input type="number" min="0" name="stock" id="productStock" value= "<%=prod.stock || ""%>"/>
+
+        <label for="productDiscount">Descuento</label>
+        <input type="number" min="0" name="discount" id="productDiscount"value=<%=prod.discount || ""%> />
+
+        <% if(url.includes("crear")) { %>
+        <button type="submit" class="button create margin">
+            Crear producto
+        </button>
+        <% } %> <% if(url.includes("editar")) {%>
+        <button type="submit" class="button create">Editar producto</button>
+        <% } %>
+    </form>
+    <% if(url.includes("editar")) {%>
+    <form
+        class="form"
+        method="POST"
+        action="/productos/<%= product.id%>/eliminar?_method=DELETE"
+    >
+        <button type="submit" class="button erase">Borrar Producto</button>
+    </form>
+    <% } %>
+</section>

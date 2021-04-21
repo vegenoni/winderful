@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/collapseDetails.css" />
+        <link rel="stylesheet" href="/css/productDetail.css" />
+        <script defer src="/js/productPreview.js"></script>
+        <script
+            type="text/javascript"
+            src="/js/validations/validator.min.js"
+        ></script>
+        <script defer src="/js/validations/validationFunctions.js"></script>
+        <title>NUEVO PRODUCTO | WINEDERFUL</title>
+        <script defer src="/js/validations/newProduct.js"></script>
+        <script defer src="/js/prodDetail.js"></script>
+    </head>
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <main class="main-newProduct">
+             <%- include("../partials/products/preview.ejs") %> 
+            <%- include("../partials/products/form.ejs") %> 
+        </main>
+        <%- include("../partials/footer.ejs") %>
+    </body>
+</html>

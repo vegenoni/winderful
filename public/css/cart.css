@@ -1,0 +1,396 @@
+/* COLORS */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ul, p{
+    font-size: 14px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+/* POSITIONS AND DISPLAY*/
+
+
+
+.final-price:hover .fa-wine-bottle {
+    transform: rotate(60deg);
+    transition: transform 2s;
+}
+
+.section{
+    display: grid;
+    grid-template-columns: 4% 28.5% 21% auto 14% 16%;
+    padding: 15px 10px;
+}
+
+.section div{
+    text-align: center;
+}
+
+
+.article{
+    display: grid;
+    border: 0.5px solid rgb(212, 212, 212);
+    margin: 10px;
+    padding: 10px;
+    grid-gap: 15px;
+    border-radius: 2px;
+}
+
+
+.article div{
+    text-align: center;
+}
+
+#wine-logo-box img{
+    width: 35%;
+    margin: 0 auto;
+ }
+
+
+ #trash-box{
+     position: absolute;
+     right: 5%;
+ }
+
+ #trash-box button{
+     font-size: 15px;
+ }
+
+/**/
+
+
+
+
+
+
+/* SEPECIFIC TAGS */
+#align-left{
+    justify-content: left;
+    display: grid
+}
+
+
+.border-bottom{
+    border-bottom: 1px solid grey;
+    padding: 0 10px;
+}
+.delete{
+    background-color: white;
+    border: 0;
+}
+
+.delete i{
+    color: red;
+}
+
+.submit-button-specs {
+    background-color: #289af7;
+    width: 85%;
+    height: 5vh;
+    color: white;
+    font-style: bold;
+    border-radius: 5px;
+    align-self: center;
+}
+
+#button-container{
+    text-align: center;
+    height: 100%;
+}
+
+
+.width-10{
+    width: 10%;
+}
+
+
+li {
+    display: inline;
+    text-decoration: none;
+    color: white;
+
+}
+
+a {
+
+    text-decoration: none;
+}
+
+
+
+#product-options {
+    border-top: solid 1px gray;
+    border-bottom: solid 1px rgba(10, 10, 10, 1);
+    margin: 2% 0;
+    background-color: white;
+    
+}
+
+/* TYPO */
+
+.bold {
+    font-weight: bold;
+}
+
+
+/*MOVEMENT*/
+
+/*-------*/
+
+.sad-glass{
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 5%;
+}
+
+.sad-glass img{
+    width: 25%;
+}
+
+.start-now{
+    color: #9a345c;
+    text-decoration: underline;
+}
+
+.categories {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+
+#empty-cart-msg{
+    text-align: center;
+    padding: 20px 0;
+}
+.hand-cart {
+    width: 20%;
+    text-align: left;
+    position: relative;
+    left: -20px;
+    top: 60px;
+}
+
+.hand-cart-near {
+    width: 20%;
+    text-align: left;
+    position: relative;
+    left: -20px;
+    top: 60px;
+}
+
+ul {
+    padding: 0;
+}
+
+
+.width-90 {
+    width: 90%;
+}
+
+.width-50 {
+    width: 50%;
+
+}
+
+.self-end{
+    align-self: flex-end;
+}
+
+
+#product-options ul li i {
+    font-size: 1.5em;
+    background-color: white;
+}
+
+.gray{
+    color: gray;
+}
+
+
+
+ul li button {
+    color: #748ac4
+}
+
+.font-size-11 {
+    font-size: 1.1em;
+}
+
+.quantity{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 25%;
+    margin: 0 auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quantity-box, .minus, .plus{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    border: 0.5px solid rgb(207, 206, 206);
+    font-size: 12px;
+    font-weight: bolder;
+    background-color: white;
+
+}
+
+.partial-price{
+    font-size: 20px;
+    padding: 10px 0;
+    color: #8DC19D;
+}
+
+
+.fa-clipboard{
+    font-size: 2em;
+    color: brown;
+    align-self: center;
+    display: none;
+}
+
+
+.fa-clipboard:hover table[id=table-display]{
+    background-color: lawngreen;
+}
+
+.top-marg-5{
+    margin-top: 5%
+}
+
+
+.display-md{
+    display: none;
+}
+
+
+.beige{
+    background-color: floralwhite;
+}
+
+.cupon-box{
+    display: grid;
+    width: 60%;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+
+.cupon-box input{
+    padding: 10px;
+    font-size: 14px;
+}
+
+.total-price{
+    display: grid;
+    padding: 15px;
+}
+
+.total-price div{
+    display: grid;
+    grid-template-columns: 80% auto;
+    border-bottom: 0.5px solid rgb(207, 206, 206);
+    padding: 10px 0;
+}
+
+#total{
+    border-bottom: 0;
+}
+
+#total-price{
+    color: #8DC19D;
+}
+
+
+.cupon-button{
+    background-color: black;
+}
+
+
+
+@media(min-width:768px){
+    #trash-box{
+        position: initial;
+    }
+    #cart-columns{
+        display: none;
+        margin-top: 2%;
+    }
+    .article{
+        display: grid;
+        grid-template-columns: 5% 23% 23% 11% 15% auto;
+    }
+
+    .article div{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .categories {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    #wine-logo-box img{
+        width: 60%;
+    }
+    .sad-glass img{
+        width: 15%;
+    }
+
+    .cupon-box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+}
+
+@media (min-width: 1100px) {
+
+
+
+    .categories {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    
+    .sad-glass img{
+        width: 10%;
+    }
+
+    .article{
+        grid-template-columns: 5% 24.5% 23% 14% 12% auto;
+    }
+
+    .quantity-box, .minus, .plus{
+        height: 47px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .total-price{
+        width: 44%;
+        margin-left: auto;
+        margin-top: 20px;
+    }
+
+    #buy-form{
+        margin-top: 10px;
+    }
+
+    .total-price div p:last-child{
+        text-align: center;
+    }
+
+}

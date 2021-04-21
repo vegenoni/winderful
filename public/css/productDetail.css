@@ -1,0 +1,301 @@
+.sliderDetail{
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  padding: 30px;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.sliderBox{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+ul.sliderBox li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+}
+
+ul.sliderBox li img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+ul.sliderBox li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.sliderBox li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+.sliderMenu{
+  text-align: center;
+  margin: 20px;
+}
+
+.sliderMenu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.sliderMenu li a {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  /* padding: 10px; */
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 100%;
+}
+
+body ul,
+body li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* .noScroll {
+  overflow: hidden !important;
+} */
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  perspective: 100px;
+  margin-top: 20px;
+}
+
+.productCard .container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.productCard .container .info .name {
+  color: darkgray;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.productCard .container .info .slogan {
+  margin: 10px 0;
+  font-size: 30px;
+}
+.productCard .container .info .price {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.productCard .container .info .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  margin-top: 50px;
+}
+ .buttons .button {
+  margin: 20px 20px 0 0;
+  min-width: 120px;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #3a3a31;
+  user-select: none;
+  cursor: pointer;
+  transition: ease all 0.3s;
+  text-decoration: none;
+}
+ .buttons .button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.productCard .container .info .buttons .button.colored {
+  background-color: #ff5263;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  body * {
+    cursor: default !important;
+  }
+
+  .productCard.morph .container .colorLayer {
+    width: 100%;
+    height: 80vh;
+  }
+  .productCard.morph .container .preview {
+    width: 100%;
+    height: calc(80vh - 100px);
+  }
+  .productCard.morph .container .preview .brand {
+    top: 0;
+  }
+  .productCard .container {
+    width: 100%;
+  }
+  .productCard .container .info {
+    width: 100%;
+    margin-bottom: 450px;
+    text-align: center;
+  }
+  .productCard .container .info .attribs .attrib .options {
+    justify-content: center;
+  }
+  .productCard .container .info .attribs .attrib .options .option {
+    margin: 10px;
+  }
+  .productCard .container .info .buttons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .productCard .container .info .buttons .button {
+    margin: 20px;
+  }
+  .productCard .container .colorLayer {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    transform: none;
+  }
+  .productCard .container .colorLayer:after {
+    top: -20vh;
+    right: 0;
+    width: 100%;
+    height: 20vh;
+  }
+  .productCard .container .preview {
+    top: auto;
+    bottom: 50px;
+    width: 100%;
+    height: 400px;
+  }
+  .productCard .container .preview .brand {
+    top: 0;
+    left: 0;
+    text-align: left;
+    -webkit-text-stroke: 3px #f7c531;
+  }
+  .productCard .container .preview .closePreview {
+    top: 0;
+  }
+  .productCard .container .preview .movControls {
+    bottom: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .productCard .container .info {
+    margin-bottom: 300px;
+  }
+  .productCard .container .info .buttons .button {
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+  .productCard .container .colorLayer {
+    height: 200px;
+  }
+  .productCard .container .preview {
+    height: 250px;
+  }
+  .productCard .container .preview .brand {
+    height: 150px;
+    font-size: 150px;
+  }
+  .sliderDetail{
+    margin: auto;
+    background-color: white;
+    width: 800px;
+    padding: 30px;
+  }
+
+
+  ul.sliderMenu{
+    position: relative;
+    width: 800px;
+    height: 300px;
+  }
+
+  ul.sliderMenu li {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: 0;
+      width: inherit;
+      height: inherit;
+      transition: opacity .5s;
+      background:#fff;
+  }
+
+  ul.sliderMenu li img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  ul.sliderMenu li:first-child {
+      opacity: 1; 
+  }
+
+  ul.sliderMenu li:target {
+      opacity: 1; 
+  }
+
+  .sliderMenu{
+    text-align: center;
+    margin: 20px;
+  }
+
+  .sliderMenu li{
+    display: inline-block;
+    text-align: center;
+  }
+
+  .sliderMenu li a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: grey;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+  }
+}

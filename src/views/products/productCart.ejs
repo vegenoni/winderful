@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head")%>
+        <link rel="stylesheet" href="/css/cart.css" />
+        <title>CARRITO | WINEDERFUL</title>
+        <script defer src="/js/cartFunctions.js"></script>
+        <script defer src="/js/cart.js"></script>
+    </head>
+
+    <body>
+        <%- include("../partials/header")%>
+
+        <main id="main">
+            
+            <section id="empty-cart-msg">
+                <div>
+                    <h4>
+                        Todavía no has agregado productos a tu carrito. <a class="start-now" href="/productos">Comienza ahora</a> 
+                    </h4>
+                </div>
+                
+                <div class="sad-glass">
+                    <img src="/images/glass-cart.png" alt="Sad Glass">
+                </div>
+            </section>
+            <section id="cart-columns" class="section border-bottom">
+                <div></div>
+                <div></div>
+                <div id="align-left">
+                    <p>Producto</p>
+                </div>
+                <div>
+                    <p>$ unitario</p>
+                </div>
+                <div>
+                    <p>Cant.</p>
+                </div>
+                <div>
+                    <p>Total</p>
+                </div>
+            </section>
+            <div id="complete-cart">
+                <section
+                    id="products-section"
+                    class=""
+                >
+                </section>
+                <section id="section-buy" class="bold">
+                    <div class="cupon-box">
+                        <input type="text" name="cupon" id="cupon" placeholder="Código de descuento">
+                        <button class="button cupon-button">
+                            Aplicar código
+                        </button>
+                    </div>
+                    <div class="total-price">
+                        <div>
+                            <p>Subtotal</p>
+                            <p id="subtotal-price"></p>
+                        </div>
+                        <div>
+                            <p>Costo de envío</p>
+                            <p>SIN CARGO</p>
+                        </div>
+                        <div id="total">
+                            <p>Total</p>
+                            <p id="total-price"></p>
+                        </div>
+                    
+                    <form id="buy-form" method="POST">
+                        <input
+                            type="hidden"
+                            name="userId"
+                            value="<%=user.id%>"
+                        />
+                        <button
+                            id="buy-btn"
+                            class="button create final-price"
+
+                        >
+                            CONTINUAR COMPRA
+                        </button>
+                    </form>
+                </div>
+                </section>
+            </div>
+<!-- 
+                <section class="top-marg-5">
+                    <div class="subtitle bestSeller">
+                        <img class="hand-cart" src="/images/hand-01.png" alt="hand" />
+                        <div class="background-text"></div>
+                        <h2 class="wine">VINOS QUE PODRIAN GUSTARTE</h2>
+                    </div>
+                    
+                </section>
+                <section class="top-marg-5">
+                    <div class="subtitle bestSeller">
+                        <img class="hand-cart-near" src="/images/hand-01.png" alt="hand" />
+                        <div class="background-text"></div>
+                        <h2 class="wine">BODEGAS CERCA TUYO</h2>
+                    </div>
+                    
+                </section> -->
+            </main>
+
+        <%- include("../partials/footer") %>
+    </body>
+</html>

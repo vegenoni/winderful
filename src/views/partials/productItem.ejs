@@ -1,0 +1,31 @@
+<article class="prodArticle">
+    <a class="prod" href="/productos/<%= product.id %> ">
+        <div class="prod-img-box">
+            
+        
+                <img class="prod-img" src="/images/products/<%=product.image[0]%>" alt="Vino tinto" />
+            
+                
+        </div>
+                
+        <% if(user && user.dni){ %> 
+            <form action="/carrito/agregar/<%= product.id %>" method="POST">
+                
+                    <div class="buttons">
+                        <a href="/usuarios/login" class="button">
+                            Agregar al carrito
+                            <i class="fas fa-shopping-cart cart-button"></i>
+                        </a>
+                   
+            </div>
+            </form>  
+        <% } %> 
+        <div class="prod-name-box">
+            <p><%= product.productName %></p>
+        </div>
+        <div class="prod-price-cart-box">
+            <p>$<%= product.price %></p>
+        </div>    
+    </a>
+</article>
+

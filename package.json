@@ -1,0 +1,39 @@
+{
+  "name": "grupo-01",
+  "version": "1.0.0",
+  "description": "Seremos un ecommerce de **vinos**. También ofreceremos el servicio de **reserva de tours o catas**, donde la bodega cargara sus días y horarios disponibles para realizarlos y los usuarios reservarán desde el sitio. El diferencial de nuestro e commerce será que este, ofreceraá una modalidad (a parte de la de venta de productos tradicional) en la que nuestra plataforma guiará, a los clientes que asi lo deseen, durante el proceso de eleccion del vino, buscando facilitarle una eleccion mas informada, siempre con terminos que el usuario pueda entender.\r La idea es que la pagina web sea un espacio en el cual a parte de facilitar la compra y venta de vinos asi como las reservas de visitas a bodegas, haya informacion clara, ordeanada y entendible por el usuario joven que lo ayude a adentrarse en el mundo de los vinos sin desistir en el intento.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e js app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0920CDFSNCN27ARED/grupo-01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0920CDFSNCN27ARED/grupo-01/issues"
+  },
+  "homepage": "https://github.com/0920CDFSNCN27ARED/grupo-01#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.9.2",
+    "jquery": "^3.6.0",
+    "mercadopago": "^1.5.6",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "node": "^15.0.1",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.0"
+  }
+}

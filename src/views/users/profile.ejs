@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/modal.css" />
+        <link rel="stylesheet" href="/css/profile.css" />
+        <script defer src="/js/validations/validator.min.js"></script>
+        <script defer src="/js/validations/validationFunctions.js"></script>
+        <script defer src="/js/profile.js"></script>
+        <script defer src="/js/modal.js"></script>
+        <script defer src="/js/payment/pending.js"></script>
+        <title>PERFIL | WINEDERFUL</title>
+    </head>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <main class="profile-main">
+            <section class="profile-left">
+                <div class="profile-image">
+                    <img src="/images/users/<%= user.image %>" alt="" />
+                </div>
+                <div class="profile-nav">
+                    <ul>
+                        <li>
+                            <button id="profile-btn" class="profile-button">
+                                Perfil
+                            </button>
+                        </li>
+                        <% if(!user.cuit) {%>
+                        <li>
+                            <button
+                                id="transactions-btn"
+                                class="profile-button"
+                            >
+                                Mis compras
+                            </button>
+                        </li>
+                        <li>
+                            <button class="profile-button">
+                                Mis favoritos
+                            </button>
+                        </li>
+                        <li>
+                            <button class="profile-button" id="address-btn">
+                                Mis direcciones
+                            </button>
+                        </li>
+                        <% } else { %>
+                        <li>
+                            <button id="myPosts-btn" class="profile-button">
+                                Mis publicaciones
+                            </button>
+                        </li>
+                        <li>
+                            <button class="profile-button" id="address-btn">
+                                Mis sucursales
+                            </button>
+                        </li>
+                        <% } %>
+
+                        <li>
+                            <form method="post" action="/usuarios/perfil">
+                                <button
+                                    class="profile-button red"
+                                    type="submit"
+                                >
+                                    Cerrar sesión
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+             <%-include("../partials/profile/personalData.ejs")%>
+            <%-include("../partials/profile/addresses.ejs")%> 
+            <% if(user.dni){%> 
+            <%-include("../partials/profile/buyer/transactions.ejs")%>
+            <% } else { %>
+            <%-include("../partials/profile/cellar/posts.ejs")%> 
+           
+            <% } %>
+        </main>
+        <%-include("../partials/footer.ejs")%>
+    </body>
+</html>
